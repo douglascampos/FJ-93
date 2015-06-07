@@ -9,7 +9,7 @@ public class BalancoEmpresa {
 		Divida divida = new Divida();
 		divida.setCredor(credor);
 		divida.setTotal(valor);
-		divida.setCnpjCredor(cnpjCredor);
+		divida.getCnpjCredor().setCnpjCredor(cnpjCredor); // <- Zuado
 		dividas.put(cnpjCredor, divida);
 		
 	}
@@ -21,7 +21,7 @@ public class BalancoEmpresa {
 			pagamento.setPagador(nomePagador);
 			pagamento.setCnpjPagador(cnpjPagador);
 			pagamento.setValor(valor);
-			divida.registra(pagamento);
+			divida.getPagamentos().registra(pagamento);
 		}
 	}	
 }
